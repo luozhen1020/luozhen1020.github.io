@@ -16,7 +16,7 @@
         }
         #box{
             width: 100%;
-            height: 27%;
+            height: 35%;
             background-image: url(./back.jpg);
             background-size: 100%;
             background-repeat: no-repeat;
@@ -71,6 +71,13 @@
             text-align: center;
             line-height: 40px;
         }
+        .bottom{margin: 0 auto;            
+    width: 70%;
+    position: absolute;
+    bottom: 10px;
+    left: 13%;
+    
+        }
 
     </style>
 </head>
@@ -99,6 +106,9 @@
                 <span id="seconds"></span>&nbsp;:&nbsp;
                 <span id="mseconds"></span>&nbsp;</div>
         </div>
+        <div class="bottom">
+            <p style="color: #fff;font-size: 12px;">技术支持:&nbsp;:&nbsp;福建省广电智能系统集成工贸有限公司</p>
+        </div>
     </div>
 </body>
 <script>
@@ -113,7 +123,16 @@
         var date = new Date();
         var hourtext = date.getHours(); // 时
         var minutestext = date.getMinutes(); // 分
-        var secondstext = date.getSeconds() //秒        
+        var secondstext = date.getSeconds() //秒    
+        if (hourtext >= 0 && hourtext <= 9) {
+            hourtext = "0" + hourtext;
+        }
+        if (minutestext >= 0 && minutestext <= 9) {
+            minutestext = "0" + minutestext;
+        }
+        if (secondstext >= 0 && secondstext <= 9) {
+            secondstext = "0" + secondstext;
+        }
         hour.textContent =hourtext;
         minutes.textContent =minutestext;
         seconds.textContent =secondstext;
