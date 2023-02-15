@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css" >
+        *{
+            margin:0;
+            padding:0
+        }
+        html,body,#wrapbox{
+            width: 100%;
+            height: 100%;
+        }
+        #box{
+            width: 100%;
+            height: 27%;
+            background-image: url(./back.jpg);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-color: #f78c40;
+        }
+        #wrapbox{
+            background-color: #f78c40;
+        }
+        #form{
+            margin:0 20px;
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        #flex{
+            display: flex;
+        }
+        img{
+            width: 45%;height: 100%;
+            margin-bottom: 6px;
+        }
+        .lable{
+            color: #a6a6a6;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        .value{
+            margin-bottom: 10px;
+        }
+        .right{
+            padding-left: 20px;
+            padding-top: 9px;
+        }
+        .car,.time{
+            width: 80%;
+             margin: 0 auto;
+
+        }
+        .value{
+            font-size: 16px;
+            color: black;
+        }
+        .car span{
+            display: inline-block;
+    margin-left: 20px;
+        }
+        #time2{
+            background-color: #fce4cc;
+            color: #c1764e;
+            height: 40px;
+            font-size: 20px;
+            text-align: center;
+            line-height: 40px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrapbox">
+        <div id="box"></div>
+        <div id="form">
+            <div id="flex">
+                <img src="./head.jpg" alt="">
+                <div class="right">
+                    <p class="lable">姓名/Name</p>
+                    <p class="value">XX</p>
+                    <p  class="lable">人员类型1Type:</p>
+                    <p class="value">访客</p>
+                    <p class="lable">可通行区域/ Region:</p>
+                    <p class="value">全部区域</p>
+                </div>
+            </div>
+            <div class="car"><p class="lable">车辆信息/Car:<span  class="value">ASGJHJ</span></p></div>
+            <div class="time">
+                <p class="lable">有效时间段/ Time：</p>
+                <p class="value">2023-02-15 08:30至02-15 18:00</p>                
+            </div>
+            <div id="time2"><span id="hour"></span>&nbsp;:&nbsp;
+                <span id="minutes"></span>&nbsp;:&nbsp;
+                <span id="seconds"></span>&nbsp;:&nbsp;
+                <span id="mseconds"></span>&nbsp;</div>
+        </div>
+    </div>
+</body>
+<script>
+    var time2=document.getElementById('time2');
+    var hour=document.getElementById('hour');
+    var minutes=document.getElementById('minutes');
+    var seconds=document.getElementById('seconds');
+    var mseconds=document.getElementById('mseconds');
+
+    
+    setInterval(function(){
+        var date = new Date();
+        var hourtext = date.getHours(); // 时
+        var minutestext = date.getMinutes(); // 分
+        var secondstext = date.getSeconds() //秒        
+        hour.textContent =hourtext;
+        minutes.textContent =minutestext;
+        seconds.textContent =secondstext;
+        mseconds.textContent =Math.round(Math.random()*999);
+        console.log(Math.round(Math.random()*999));
+    }, 100 )
+   </script>
+</html>
